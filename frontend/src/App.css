@@ -59,6 +59,7 @@ html, body {
 .header-bar li a.active {
     color: rgb(47, 255, 72);
 }
+
 .background-img,
 .background-about {
     position: absolute;
@@ -105,6 +106,7 @@ html, body {
 .content p {
     color: beige;
 }
+
 @media screen and (max-width: 768px) {
     .nav-menu {
         flex-direction: column;
@@ -119,6 +121,7 @@ html, body {
         font-size: 35px;
     }
 }
+
 .about-page {
   display: flex;
   justify-content: center;
@@ -237,6 +240,7 @@ html, body {
     line-height: 1.6;
   }
 }
+
 .service-page {
   background-color: #040627;
   color: beige;
@@ -327,6 +331,7 @@ html, body {
   position: relative;
   z-index: 1;
 }
+
 @media (max-width: 1024px) {
   .service-page .service-box {
     grid-template-columns: repeat(2, 1fr);
@@ -363,6 +368,7 @@ html, body {
     font-size: 0.9rem;
   }
 }
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -382,3 +388,195 @@ html, body {
 .service-page .service-box > div:nth-child(1) { animation-delay: 0.2s; }
 .service-page .service-box > div:nth-child(2) { animation-delay: 0.4s; }
 .service-page .service-box > div:nth-child(3) { animation-delay: 0.6s; }
+
+/* App Container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Loading Spinner */
+.loading-spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Auth Forms */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.auth-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-form h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.auth-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.auth-button:hover {
+  background-color: #2980b9;
+}
+
+.auth-button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #e74c3c;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.success-message {
+  color: #27ae60;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .auth-form {
+    padding: 1.5rem;
+  }
+}
+
+/* Navigation */
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #3498db;
+}
+
+/* Content Sections */
+.content-section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Grid Layout for Photos */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Transitions */
+.page-transition {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Auth Links */
+.auth-link {
+  margin-top: 1rem;
+  text-align: center;
+  color: #666;
+}
+
+.auth-link a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.auth-link a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+/* Form Input Focus Styles */
+.form-input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+  outline: none;
+}
+
+/* Success Message Styles */
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
