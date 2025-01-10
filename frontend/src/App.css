@@ -67,75 +67,90 @@ html, body {
   color: #3498db;
 }
 
-/* Landing Page Background */
-.background-img,
-.background-about {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
+/* Landing Page Layout */
 .background-img {
   min-height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-              url('/src/assets/background.jpg') no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/src/assets/background.jpg') no-repeat center center;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Content Section */
-.content {
+/* Hero Section */
+.hero-section {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 0 2rem;
-  margin-top: 4rem;
-  text-align: center;
-  color: #fff;
+  justify-content: center;
+  padding: 6rem 2rem 2rem 2rem;
   position: relative;
-  z-index: 10;
-  padding-top: 80px; 
 }
 
-.content img {
-  width: 130px;
-  height: auto;
-  object-fit: cover;
-  padding: 3px;
+.profile-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.profile-image-wrapper {
+  position: relative;
+  text-align: center;
+}
+
+.profile-image {
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
-  border: 2px solid rgb(235, 75, 16);
-  transition: all ease 1s;
+  border: 4px solid #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.content img:hover {
-  transform: scale(1.1);
-  opacity: 0.8;
+.profile-image:hover {
+  transform: scale(1.05);
 }
 
-.content h1 {
+.side-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.side-image:hover {
+  transform: translateY(-10px);
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero-content h1 {
   font-size: 3.5rem;
-  font-weight: 700;
   margin-bottom: 1rem;
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   font-family: "Berkshire Swash", serif;
-  color: rgb(203, 58, 5);
+  letter-spacing: 1px;
 }
 
-.content p {
-  font-size: 1.2rem;
+.hero-content p {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
   max-width: 600px;
   margin: 0 auto;
-  color: rgba(255, 255, 255, 0.9);
-  color: beige;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  line-height: 1.6;
 }
 
 /* Logout Button */
@@ -155,6 +170,27 @@ html, body {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .profile-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .side-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .profile-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+}
+
 @media (max-width: 768px) {
   .header-bar {
     padding: 1rem;
@@ -168,28 +204,37 @@ html, body {
     gap: 1rem;
   }
 
-  .content h1 {
+  .hero-content h1 {
     font-size: 2.5rem;
   }
 
-  .content p {
-    font-size: 1rem;
+  .hero-content p {
+    font-size: 1.2rem;
   }
 
-  .nav-menu {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav-menu li {
-    margin: 10px 0;
-  }
-
-  .content h1 {
-    font-size: 35px;
+  .side-image {
+    width: 150px;
+    height: 150px;
   }
 }
 
+@media (max-width: 480px) {
+  .profile-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .side-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}
+
+/* About Page */
 .about-page {
   display: flex;
   justify-content: center;
@@ -309,6 +354,7 @@ html, body {
   }
 }
 
+/* Service Page */
 .service-page {
   background-color: #040627;
   color: beige;
